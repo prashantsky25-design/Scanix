@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Dark mode is toggled by a "dark" class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* In dark mode the neutral and status colours are remapped, so every
+   existing slate / white / green / amber / red / indigo utility adapts. */
+.dark {
+  color-scheme: dark;
+
+  --color-white: #121b30;
+  --color-slate-50: #0b1120;
+  --color-slate-100: #1a2540;
+  --color-slate-200: #2a3856;
+  --color-slate-300: #3d4d6b;
+  --color-slate-500: #94a3b8;
+  --color-slate-600: #b6c2d4;
+  --color-slate-700: #d5dde9;
+  --color-slate-800: #e5eaf2;
+  --color-slate-900: #f1f5f9;
+
+  --color-green-100: #0d2e1c;
+  --color-green-300: #1f6b3f;
+  --color-green-800: #b7f0cd;
+  --color-amber-100: #3a2a0b;
+  --color-amber-300: #8a6414;
+  --color-amber-800: #fde3a7;
+  --color-red-100: #3b1416;
+  --color-red-300: #8e2a30;
+  --color-red-800: #fbc4c4;
+  --color-indigo-50: #1b2142;
+  --color-indigo-800: #c7d2fe;
+}
+
+body {
+  background-color: var(--color-slate-50);
+}
+
+@layer components {
+  .btn {
+    @apply w-full rounded-xl bg-indigo-600 px-4 py-3 text-center font-semibold active:bg-indigo-700 disabled:opacity-50;
+    color: #fff;
+  }
+  .btn-light {
+    @apply w-full rounded-xl bg-white px-4 py-3 text-center font-semibold text-slate-700 ring-1 ring-slate-300 active:bg-slate-100;
+  }
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base outline-none focus:border-indigo-500;
+  }
+  .card {
+    @apply rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200;
+  }
+}
