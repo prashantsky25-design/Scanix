@@ -5,6 +5,8 @@ const classSessionSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, trim: true, maxlength: 120 },
     active: { type: Boolean, default: true },
+    // Set when the teacher clicks "End class". createdAt (from timestamps) is the start time.
+    endTime: { type: Date, default: null },
 
     // Teacher's private key for the live class page. Returned once, at creation.
     hostKey: { type: String, select: false, default: () => crypto.randomBytes(16).toString("hex") },

@@ -32,7 +32,7 @@ Creating an event returns a secret `hostKey`, placed in the private host URL (`/
 The scan endpoint requires it (`x-host-key` header). Bookmark that URL; it is shown only once.
 
 ## Class attendance (current main flow)
-- Teacher: "Start a class" shows a QR that changes every `QR_ROTATE_SECONDS` (default 2) seconds, and a scan is accepted for `QR_GRACE_SLOTS` more slots (default 2, so up to about 6 seconds), with a live list of who is present.
+- Teacher: "Start a class" shows a QR that changes every `QR_ROTATE_SECONDS` (default 2) seconds, and a scan is accepted for `QR_GRACE_SLOTS` more slots (default 4, so a scan counts for up to about 10 seconds), with a live list of who is present.
 - Student: "Mark my attendance" -> enter name + roll number once -> scan the teacher's QR.
 - To test on phones, open the app through your computer's LAN IP or an HTTPS tunnel on BOTH the teacher screen and the phones (the QR contains the teacher's page address, so `localhost` will not work for phones).
 - The original event/registration pages still exist in the code but are not linked from the landing page.

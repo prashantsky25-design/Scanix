@@ -30,7 +30,7 @@ export default function Scanner({ onScan }) {
         },
         () => {}
       )
-      .catch(() => setError("Camera unavailable. Allow camera access (HTTPS is required on phones)."));
+      .catch(() => setError("Camera blocked. Tap the 🔒 icon in your browser address bar → allow Camera, then refresh."));
 
     return () => {
       starting

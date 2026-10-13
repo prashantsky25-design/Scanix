@@ -2,6 +2,7 @@ const router = require("express").Router();
 const c = require("../controllers/classController");
 
 router.post("/", c.createClass);
+router.post("/:id/claim", c.claim);
 router.post("/:id/attend", c.attend);
 router.get("/:id/qr", c.requireHost, c.getQr);
 router.get("/:id/attendance", c.requireHost, c.getAttendance);
